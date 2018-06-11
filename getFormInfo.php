@@ -1,3 +1,11 @@
+<?php
+$first_name = $_REQUEST['first_name'];
+$last_name = $_REQUEST['last_name'];
+$email = $_REQUEST['email'];
+$facebook_url = $_REQUEST['facebook_url'];
+$twiter_handle = $_REQUEST['twiter_handle'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,13 +24,14 @@
   <div id="content">
     <p>Это запись той информации, которую вы отправили:</p>
     <p>
-      Имя: <?php echo $_REQUEST['first_name']; ?><br>
-      Фамилия: <?php echo $_REQUEST['last_name']; ?><br>
-      Адрес электронной почты: <?php echo $_REQUEST['email']; ?><br>
-      URL-адрес в Facebook: <?php echo $_REQUEST['facebook_url']; ?><br>
-      Индентификатор в Twitter: <?php echo $_REQUEST['twiter_handle']; ?><br>
+      Имя: <?php echo $first_name ; ?><br>
+      Фамилия: <?php echo $last_name; ?><br>
+      Адрес электронной почты: <?php echo $email; ?><br>
+      URL-адрес в Facebook: <?php echo $facebook_url; ?><br>
+      Индентификатор в Twitter: <?php echo $twiter_handle; ?><br>
     </p>
   </div>
+  <a href="socialEntryForm.html">Back</a>
   <div class="footer"></div>
 </body>
 </html>
