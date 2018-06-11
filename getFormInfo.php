@@ -3,6 +3,10 @@ $first_name = $_REQUEST['first_name'];
 $last_name = $_REQUEST['last_name'];
 $email = $_REQUEST['email'];
 $facebook_url = $_REQUEST['facebook_url'];
+$position = strpos($facebook_url, "facebook.com");
+if(!$position){
+  $facebook_url = "http://www.facebook.com".$facebook_url;
+}
 $twiter_handle = $_REQUEST['twiter_handle'];
 ?>
 
@@ -26,7 +30,7 @@ $twiter_handle = $_REQUEST['twiter_handle'];
     <p>
       Имя: <?php echo $first_name.' '.$last_name ; ?><br>
       Адрес электронной почты: <?php echo $email; ?><br>
-      URL-адрес в Facebook: <?php echo $facebook_url; ?><br>
+      <a href=<?php echo $facebook_url; ?>>URL-адрес в Facebook</a><br>
       Индентификатор в Twitter: <?php echo $twiter_handle; ?><br>
     </p>
   </div>
