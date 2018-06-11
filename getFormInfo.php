@@ -24,8 +24,7 @@ $twiter_handle = $_REQUEST['twiter_handle'];
   <div id="content">
     <p>Это запись той информации, которую вы отправили:</p>
     <p>
-      Имя: <?php echo $first_name ; ?><br>
-      Фамилия: <?php echo $last_name; ?><br>
+      Имя: <?php echo $first_name.' '.$last_name ; ?><br>
       Адрес электронной почты: <?php echo $email; ?><br>
       URL-адрес в Facebook: <?php echo $facebook_url; ?><br>
       Индентификатор в Twitter: <?php echo $twiter_handle; ?><br>
