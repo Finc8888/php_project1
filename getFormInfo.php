@@ -2,7 +2,8 @@
 $first_name = $_REQUEST['first_name'];
 $last_name = $_REQUEST['last_name'];
 $email = $_REQUEST['email'];
-$facebook_url = $_REQUEST['facebook_url'];
+$facebook_url = str_replace("facebook.org", "facebook.com",
+                            trim($_REQUEST['facebook_url']));
 $position = strpos($facebook_url, "facebook.com");
 if(!$position&$position!==0){
   $facebook_url = "http://www.facebook.com/".$facebook_url;
