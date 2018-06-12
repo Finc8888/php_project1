@@ -4,10 +4,19 @@ $last_name = $_REQUEST['last_name'];
 $email = $_REQUEST['email'];
 $facebook_url = $_REQUEST['facebook_url'];
 $position = strpos($facebook_url, "facebook.com");
-if(!$position){
-  $facebook_url = "http://www.facebook.com".$facebook_url;
+if(!$position&$position!==0){
+  $facebook_url = "http://www.facebook.com/".$facebook_url;
 }
 $twiter_handle = $_REQUEST['twiter_handle'];
+$twiter_url = "http://www.twiter.com/";
+$position = strpos($twiter_handle, "@");
+if ($position === false) {
+  echo "false";
+  $twiter_url = $twiter_url . $twiter_handle;
+}
+else {
+  $twiter_url = $twiter_url . substr($twiter_handle, $position +1);
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +40,7 @@ $twiter_handle = $_REQUEST['twiter_handle'];
       Имя: <?php echo $first_name.' '.$last_name ; ?><br>
       Адрес электронной почты: <?php echo $email; ?><br>
       <a href=<?php echo $facebook_url; ?>>URL-адрес в Facebook</a><br>
-      Индентификатор в Twitter: <?php echo $twiter_handle; ?><br>
+      <a href=<?php echo $twiter_url;?>>Индентификатор в Twitter</a><br>
     </p>
   </div>
   <a href="socialEntryForm.html">Back</a>
