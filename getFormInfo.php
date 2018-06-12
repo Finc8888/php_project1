@@ -44,7 +44,18 @@ else {
       <a href=<?php echo $twiter_url;?>>Индентификатор в Twitter</a><br>
     </p>
   </div>
-  <a href="socialEntryForm.html">Back</a>
+  <div class="test">
+
+    <?php
+      echo '<h4>Что храниться в $_REQUEST</h4>';
+      echo "<hr>";
+      foreach ($_REQUEST as $key => $value) {
+        print("<p>"."Значение для <span id ='key'>".$key."</span>: <span id ='value'>".$value."</span></p>");
+      }
+
+     ?>
+  </div>
+  <a class="back" href="socialEntryForm.html">Back</a>
   <div class="footer"></div>
 </body>
 </html>
